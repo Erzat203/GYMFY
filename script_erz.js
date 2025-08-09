@@ -201,3 +201,277 @@ function startReaction() {
     };
   }, delay);
 }
+function openModal(trainerId) {
+  const modal = document.getElementById('trainer-modal');
+  const nameEl = document.getElementById('modal-name');
+  const specialtyEl = document.getElementById('modal-specialty');
+  const descriptionEl = document.getElementById('modal-description');
+  const ratingEl = document.getElementById('modal-rating');
+  const reviewsEl = document.getElementById('modal-reviews');
+
+  // Пример данных тренеров
+  const trainers = {
+  alexey: {
+    name: "Алексей Иванов",
+    specialty: "Специалист по бодибилдингу",
+    description: "Профессиональный тренер с 10-летним стажем. Победитель соревнований по бодибилдингу.",
+    rating: "4.9 / 5",
+    reviews: [
+      "🔥 Супер тренер, результат уже через месяц!",
+      "💪 Индивидуальный подход к каждому клиенту",
+      "👏 Очень внимательный и мотивирующий!"
+    ]
+  },
+  maria: {
+    name: "Мария Соколова",
+    specialty: "Групповые тренировки",
+    description: "Энергичная и опытная. Ведет женские программы и функциональные тренировки.",
+    rating: "4.8 / 5",
+    reviews: [
+      "💃 Классные тренировки, не скучно!",
+      "🎯 Помогла достигнуть целей быстрее",
+      "😊 Всегда позитивная и отзывчивая"
+    ]
+  },
+   igor: {
+    name: "Игорь Смирнов",
+    specialty: "Кардио и функционал",
+    description: "Мастер кардиотренировок. Поможет развить выносливость и сбросить вес.",
+    rating: "4.7 / 5",
+    reviews: [
+      "🏃 С ним даже бегать приятно!",
+      "🔥 Кардио стало любимой частью тренировки",
+      "👍 Отлично объясняет технику"
+    ]
+  },
+  olga: {
+    name: "Ольга Миронова",
+    specialty: "Пилатес и стретчинг",
+    description: "Помогает восстановиться после травм, улучшить гибкость и осанку.",
+    rating: "4.9 / 5",
+    reviews: [
+      "🧘 Настоящий мастер своего дела",
+      "✨ После её занятий спина не болит",
+      "🙌 Всегда спокойная и вдохновляющая"
+    ]
+  },
+  dmitry: {
+    name: "Дмитрий Кузнецов",
+    specialty: "Силовые тренировки",
+    description: "Опытный тренер по тяжелой атлетике. Специалист по набору мышечной массы.",
+    rating: "4.8 / 5",
+    reviews: [
+      "🏋️ Реально прокачал за 2 месяца!",
+      "💥 Даёт крутые силовые планы",
+      "🧠 Объясняет, как тренироваться безопасно"
+    ]
+  },
+  natalia: {
+    name: "Наталия Орлова",
+    specialty: "Йога и дыхательные практики",
+    description: "Гармония тела и ума. Проводит мягкие практики для женщин и подростков.",
+    rating: "4.9 / 5",
+    reviews: [
+      "🌿 Спокойствие после её занятий",
+      "🕊️ Лучшая йога в моей жизни",
+      "🌸 Атмосфера — просто космос!"
+    ]
+  },
+  sergey: {
+    name: "Сергей Лебедев",
+    specialty: "Кроссфит",
+    description: "Интенсивные тренировки, высокая результативность. Готовит к соревнованиям.",
+    rating: "4.7 / 5",
+    reviews: [
+      "🔥 Настоящая выносливость после его тренировок",
+      "💪 Стал сильнее и увереннее",
+      "⚡ Никогда не бывает скучно"
+    ]
+  },
+  elena: {
+    name: "Елена Васильева",
+    specialty: "Детский фитнес",
+    description: "Весёлые и безопасные тренировки для детей. Работает с детьми от 5 лет.",
+    rating: "4.9 / 5",
+    reviews: [
+      "👶 Мой ребёнок в восторге!",
+      "🎈 Умеет найти подход к каждому",
+      "🎉 Дети бегут на тренировки с радостью"
+    ]
+  },
+  artem: {
+    name: "Артём Белов",
+    specialty: "Функциональный тренинг",
+    description: "Современные методики, укрепление тела и подготовка к соревнованиям.",
+    rating: "4.8 / 5",
+    reviews: [
+      "🚀 Быстро почувствовал эффект",
+      "⚙️ Очень разнообразные упражнения",
+      "🧩 Хорошо объясняет и мотивирует"
+    ]
+  },
+  // ... остальные тренеры (как у тебя)
+  valeria: {
+    name: "Валерия Жукова",
+    specialty: "Фитнес для женщин",
+    description: "Формирование фигуры, уверенность в себе. Работает с женщинами любого возраста.",
+    rating: "5.0 / 5",
+    reviews: [
+      "💃 Наконец-то вижу прогресс!",
+      "💖 Поддерживает и вдохновляет",
+      "🌟 Тренировки всегда в кайф"
+    ]
+  }
+};
+
+// ✅ Эта функция открывает модалку
+function openModal(trainerId) {
+  const trainer = trainers[trainerId];
+  if (!trainer) return;
+
+  const nameEl = document.getElementById('modal-name');
+  const specialtyEl = document.getElementById('modal-specialty');
+  const descriptionEl = document.getElementById('modal-description');
+  const ratingEl = document.getElementById('modal-rating');
+  const reviewsEl = document.getElementById('modal-reviews');
+  const modal = document.getElementById('trainer-modal');
+
+  nameEl.textContent = trainer.name;
+  specialtyEl.textContent = trainer.specialty;
+  descriptionEl.textContent = trainer.description;
+  ratingEl.textContent = trainer.rating;
+
+  reviewsEl.innerHTML = "";
+  trainer.reviews.forEach((review) => {
+    const li = document.createElement("li");
+    li.textContent = review;
+    reviewsEl.appendChild(li);
+  });
+
+  modal.classList.remove("hidden");
+}
+
+function closeModal() {
+  document.getElementById('trainer-modal').classList.add('hidden');
+}
+
+
+  
+
+  const trainer = trainers[trainerId];
+
+  if (trainer) {
+    nameEl.textContent = trainer.name;
+    specialtyEl.textContent = trainer.specialty;
+    descriptionEl.textContent = trainer.description;
+    ratingEl.textContent = trainer.rating;
+
+    reviewsEl.innerHTML = "";
+    trainer.reviews.forEach((review) => {
+      const li = document.createElement("li");
+      li.textContent = review;
+      reviewsEl.appendChild(li);
+    });
+
+    modal.classList.remove("hidden");
+  }
+}
+
+function closeModal() {
+  document.getElementById('trainer-modal').classList.add('hidden');
+}
+
+// ----------------- Игра «Напомни» -----------------
+function startMemoryGame() {
+  const sequence = [];
+  for (let i = 0; i < 4; i++) {
+    sequence.push(Math.floor(Math.random() * 10));
+  }
+  const answer = prompt("Запомни и введи эту последовательность: " + sequence.join(" "));
+  const result = (answer === sequence.join(" ")) ? "✅ Правильно!" : "❌ Неправильно. Было: " + sequence.join(" ");
+  document.getElementById("memoryGameResult").innerText = result;
+}
+
+// ----------------- Игра на реакцию -----------------
+let reactionStartTime;
+
+function startReactionGame() {
+  const resultDiv = document.getElementById("reactionGameResult");
+  resultDiv.innerText = "Жди зелёного...";
+  setTimeout(() => {
+    reactionStartTime = Date.now();
+    resultDiv.innerText = "НАЖМИ!";
+    resultDiv.onclick = () => {
+      const reactionTime = Date.now() - reactionStartTime;
+      resultDiv.innerText = `⚡ Время реакции: ${reactionTime} мс`;
+      resultDiv.onclick = null;
+    };
+  }, Math.random() * 3000 + 1000);
+}
+function filterSchedule() {
+  const selected = document.getElementById("filterSelect").value;
+  const items = document.querySelectorAll(".schedule-grid li");
+
+  items.forEach(item => {
+    const type = item.getAttribute("data-type");
+    if (selected === "all" || selected === type) {
+      item.style.display = "list-item";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const isVisible = answer.style.display === "block";
+
+      // Закрыть все ответы
+      document.querySelectorAll(".faq-answer").forEach((el) => {
+        el.style.display = "none";
+      });
+
+      // Показать или скрыть текущий
+      answer.style.display = isVisible ? "none" : "block";
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+});
+const scheduleData = [
+  { time: "07:00", activity: "Йога" },
+  { time: "08:00", activity: "Кардио с Марией" },
+  { time: "09:00", activity: "Функциональный тренинг" },
+  { time: "10:00", activity: "Силовая тренировка с Артёмом" },
+  { time: "11:00", activity: "HIIT с Алиной" },
+  { time: "12:00", activity: "Перерыв" },
+  { time: "13:00", activity: "Бокс с Владом" },
+  { time: "14:00", activity: "Растяжка и дыхательные практики" },
+  { time: "15:00", activity: "TRX-тренировка" },
+  { time: "16:00", activity: "Кроссфит с Тимуром" },
+  { time: "17:00", activity: "Dance Workout с Софией" },
+  { time: "18:00", activity: "Силовой круг с Алексеем" },
+  { time: "19:00", activity: "Функционал с Дарьей" },
+  { time: "20:00", activity: "Кардио-интервалы с Никитой" },
+  { time: "21:00", activity: "Медитация и расслабление" },
+  { time: "22:00", activity: "Закрытие клуба" }
+];
+const scheduleContainer = document.getElementById("schedule");
+
+scheduleData.forEach(item => {
+  const div = document.createElement("div");
+  div.className = "schedule-item";
+  div.innerHTML = `<strong>${item.time}</strong> — ${item.activity}`;
+  scheduleContainer.appendChild(div);
+});

@@ -4,42 +4,107 @@
   <meta charset="UTF-8" />
   <title>GYMFY — Абонементы</title>
   <link rel="stylesheet" href="style_erz.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <header>
-    <h1>Абонементы</h1>
-    <nav>
+  <header class="main-header">
+  <div class="container header-container">
+    <a href="log.html" class="login-btn">Войти</a>
+
+    <div class="logo">
+      <i class='bx bx-dumbbell'></i>
+      <p>GYMFY</p>
+    </div>
+
+    <nav class="main-nav">
       <a href="index_erz.html">Главная</a>
-      <a href="club.html">О Клубе</a>
+      <a href="club.html">О клубе</a>
       <a href="trainers.html">Тренеры</a>
       <a href="shedule.html">Расписание</a>
+      <a href="abonements.html">Абонементы</a>
       <a href="faq.html">FAQ</a>
       <a href="games.html">Игры</a>
       <a href="contacts.html">Контакты</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
-    <div class="card subscription-card">
-      <h3>Базовый</h3>
-      <p>Тренажёрный зал, групповые занятия</p>
-      <p><strong>₸15,000 / месяц</strong></p>
-    </div>
-    <div class="card subscription-card">
-      <h3>Премиум</h3>
-      <p>Все базовые услуги + личный тренер, сауна, баскетбол</p>
-      <p><strong>₸25,000 / месяц</strong></p>
-    </div>
-    <div class="card subscription-card">
-      <h3>VIP</h3>
-      <p>Премиум + персональный массажист и индивидуальная диета</p>
-      <p><strong>₸40,000 / месяц</strong></p>
-    </div>
-  </main>
+<p class="main"style="padding-top: 20px; padding-bottom: 10px; padding-left: 10px;"><a style="text-decoration: none"class="main1"href="index.html">Главная</a> > <a style="text-decoration: none"class="main2"href="index_menu.html">Абонименты</a></p>
 
-  <footer>
-    <p>© 2025 GYMFY. Все права защищены.</p>
-  </footer>
+  <div class="abonement-cards-container">
+  <div class="abonement-card">
+    <div style="width: 100%; height: 130px; border-radius: 10px; overflow: hidden; background: #2e2e40; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <img src="Kipchak/91.jpg" alt="Абонемент" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+
+    <h3>Базовый</h3>
+    <p>Доступ к тренажёрному залу в будни, базовые тренировки, поход в сауну.</p>
+    <button class="buy-button">Купить</button>
+  </div>
+  <div class="abonement-card">
+   <div style="width: 100%; height: 130px; border-radius: 10px; overflow: hidden; background: #2e2e40; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <img src="Kipchak/365 (1).jpg" alt="Абонемент" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+
+    <h3>Продвинутый</h3>
+    <p>Всё из базового + групповые тренировки, консультации по питанию, бонусы от партнёров.</p>
+    <button class="buy-button">Купить</button>
+  </div>
+  <div class="abonement-card">
+    <div style="width: 100%; height: 130px; border-radius: 10px; overflow: hidden; background: #2e2e40; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  <img src="Kipchak/731.jpg" alt="VIP абонемент" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+    <h3>ВИП</h3>
+    <p>Безлимит, индивидуальные занятия с тренером, SPA-зона, персональное сопровождение, диета, массаж.</p>
+    <button class="buy-button">Купить</button>
+  </div>
+</div>
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Навигация</h4>
+      <p><a href="index_menu.html">Главная</a></p>
+      <p><a href="index_trainers.html">Тренеры</a></p>
+      <p><a href="index_membership.html">Абонементы</a></p>
+      <p><a href="index_schedule.html">Расписание</a></p>
+      <p><a href="#" onclick="requireLogin(); showScreen('booking')">Записаться</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>GYMFY</h4>
+      <p><a href="#">О клубе</a></p>
+      <p><a href="#">Миссия и цели</a></p>
+      <p><a href="#">Отзывы клиентов</a></p>
+      <p><a href="#">Наши залы</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Контакты</h4>
+      <p>Email: <a href="mailto:gymfy.club@gmail.com">gymfy.club@gmail.com</a></p>
+      <p>Тел: <a href="tel:+77081234567">+7 708 123 4567</a></p>
+      <p>Адрес: г. Алматы, пр. Абая 77</p>
+    </div>
+
+    <div class="footer-column logo-social">
+      <i class='bx bx-dumbbell'></i>
+      <p>© 2025 GYMFY – Твоя сила. Твой путь.</p>
+      <div class="social-icons">
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-youtube'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-bottom">
+    <p><a href="#">Политика конфиденциальности</a> | <a href="#">Пользовательское соглашение</a></p>
+  </div>
+</footer>
 </body>
 </html>

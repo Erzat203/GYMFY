@@ -1,57 +1,195 @@
+<!-- trainers.html -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Наши тренеры — GYMFY</title>
-  <link rel="stylesheet" href="style_erz.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тренеры GYMFY</title>
+  <link rel="stylesheet" href="style_erz.css" />
+  <script defer src="script_erz.js"></script>
 </head>
-<body>
-  <header>
-    <h1>Тренерский состав</h1>
-    <nav>
+<body class="trainers-page">
+  <header class="main-header">
+  <div class="container header-container">
+    <a href="log.html" class="login-btn">Войти</a>
+
+    <div class="logo">
+      <i class='bx bx-dumbbell'></i>
+      <p>GYMFY</p>
+    </div>
+
+    <nav class="main-nav">
       <a href="index_erz.html">Главная</a>
-      <a href="club.html">О Клубе</a>
+      <a href="club.html">О клубе</a>
+      <a href="trainers.html">Тренеры</a>
       <a href="shedule.html">Расписание</a>
       <a href="abonements.html">Абонементы</a>
       <a href="faq.html">FAQ</a>
       <a href="games.html">Игры</a>
       <a href="contacts.html">Контакты</a>
     </nav>
-  </header>
+  </div>
+</header>
+<div class="trainers-header">
+  <h1>Тренеры</h1>
+</div>
 
-  <main class="container">
-    <section class="trainers-grid">
-      <div class="trainer-card">
-        <img src="images/trainer1.jpg" alt="Тренер Алексей">
-        <h3>Алексей Иванов</h3>
-        <p>Специалист по бодибилдингу. 10 лет опыта. Мотивация и дисциплина — его стиль!</p>
-      </div>
-      <div class="trainer-card">
-        <img src="images/trainer2.jpg" alt="Тренер Мария">
-        <h3>Мария Соколова</h3>
-        <p>Групповые тренировки, пилатес и функционал. Увлечена твоим прогрессом!</p>
-      </div>
-      <div class="trainer-card">
-        <img src="images/trainer3.jpg" alt="Тренер Тимур">
-        <h3>Тимур Ахметов</h3>
-        <p>Бокс, кроссфит и кардио. Подходит индивидуально к каждому клиенту.</p>
-      </div>
-      <div class="trainer-card">
-        <img src="images/trainer4.jpg" alt="Тренер Елена">
-        <h3>Елена Ким</h3>
-        <p>Йога и реабилитация. Поможет восстановиться и обрести гармонию с телом.</p>
-      </div>
-      <div class="trainer-card">
-        <img src="images/trainer5.jpg" alt="Тренер Артём">
-        <h3>Артём Васильев</h3>
-        <p>Мастер по HIIT и силовым. Драйв, мощь и быстрый результат!</p>
-      </div>
-    </section>
-  </main>
+  <main class="trainers-grid">
+  <div class="trainer" data-trainer="alexey">
+  <img src="Kipchak/aaaaaa.webp" alt="Алексей Иванов">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Алексей Иванов</h2>
+    <p>Бодибилдинг</p>
+    <button class="more-btn" onclick="openModal('alexey')">Подробнее</button>
+  </div>
+</div>
 
-  <footer>
-    <p>© 2025 GYMFY. Все права защищены.</p>
-  </footer>
+<div class="trainer" data-trainer="maria">
+  <img src="Kipchak/мария.webp" alt="Мария Соколова">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Мария Соколова</h2>
+    <p>Групповые тренировки</p>
+    <button class="more-btn" onclick="openModal('maria')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="igor">
+  <img src="Kipchak/игорь.webp" alt="Игорь Смирнов">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Игорь Смирнов</h2>
+    <p>Кардио и функционал</p>
+    <button class="more-btn" onclick="openModal('igor')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="olga">
+  <img src="Kipchak/ольга.webp" alt="Ольга Миронова">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Ольга Миронова</h2>
+    <p>Пилатес и стретчинг</p>
+    <button class="more-btn" onclick="openModal('olga')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="dmitry">
+  <img src="Kipchak/кузнецов.webp" alt="Дмитрий Кузнецов">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Дмитрий Кузнецов</h2>
+    <p>Силовые тренировки</p>
+    <button class="more-btn" onclick="openModal('dmitry')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="natalia">
+  <img src="Kipchak/жен3.jpeg" alt="Наталия Орлова">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Наталия Орлова</h2>
+    <p>Йога и дыхательные практики</p>
+    <button class="more-btn" onclick="openModal('natalia')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="sergey">
+  <img src="Kipchak/muyhik.jpeg" alt="Сергей Лебедев">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Сергей Лебедев</h2>
+    <p>Тренер по кроссфиту</p>
+    <button class="more-btn" onclick="openModal('sergey')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="elena">
+  <img src="Kipchak/женщина1.jpeg" alt="Елена Васильева">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Елена Васильева</h2>
+    <p>Детский фитнес</p>
+    <button class="more-btn" onclick="openModal('elena')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="artem">
+  <img src="Kipchak/артем.webp" alt="Артём Белов">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Артём Белов</h2>
+    <p>Функциональный тренинг</p>
+    <button class="more-btn" onclick="openModal('artem')">Подробнее</button>
+  </div>
+</div>
+
+<div class="trainer" data-trainer="valeria">
+  <img src="Kipchak/жен2.jpeg" alt="Валерия Жукова">
+  <div class="trainer-info">
+    <h2 class="trainer-name">Валерия Жукова</h2>
+    <p>Фитнес для женщин</p>
+    <button class="more-btn" onclick="openModal('valeria')">Подробнее</button>
+  </div>
+</div>
+
+
+ 
+</main>
+
+  <section id="trainer-profile" class="hidden">
+    <button id="close-profile">× Закрыть</button>
+    <div id="profile-content"></div>
+  </section>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Навигация</h4>
+      <p><a href="index_menu.html">Главная</a></p>
+      <p><a href="index_trainers.html">Тренеры</a></p>
+      <p><a href="index_membership.html">Абонементы</a></p>
+      <p><a href="index_schedule.html">Расписание</a></p>
+      <p><a href="#" onclick="requireLogin(); showScreen('booking')">Записаться</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>GYMFY</h4>
+      <p><a href="#">О клубе</a></p>
+      <p><a href="#">Миссия и цели</a></p>
+      <p><a href="#">Отзывы клиентов</a></p>
+      <p><a href="#">Наши залы</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Контакты</h4>
+      <p>Email: <a href="mailto:gymfy.club@gmail.com">gymfy.club@gmail.com</a></p>
+      <p>Тел: <a href="tel:+77081234567">+7 708 123 4567</a></p>
+      <p>Адрес: г. Алматы, пр. Абая 77</p>
+    </div>
+
+    <div class="footer-column logo-social">
+      <i class='bx bx-dumbbell'></i>
+      <p>© 2025 GYMFY – Твоя сила. Твой путь.</p>
+      <div class="social-icons">
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-youtube'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-bottom">
+    <p><a href="#">Политика конфиденциальности</a> | <a href="#">Пользовательское соглашение</a></p>
+  </div>
+</footer>
+<!-- Модальное окно -->
+<div class="trainer-modal hidden" id="trainer-modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <h2 id="modal-name">Имя тренера</h2>
+    <p id="modal-specialty">Специализация</p>
+    <p id="modal-description">Описание тренера</p>
+    <p><strong>Оценка:</strong> <span id="modal-rating">4.9 / 5</span></p>
+    <h4>Отзывы:</h4>
+    <ul id="modal-reviews">
+      <li>🔥 Супер тренер, результат уже через месяц!</li>
+      <li>💪 Индивидуальный подход к каждому</li>
+    </ul>
+  </div>
+</div>
+
 </body>
 </html>

@@ -3,65 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GYMFY – Расписание</title>
+  <title>Расписание | GYMFY</title>
   <link rel="stylesheet" href="style_erz.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script defer src="script_erz.js"></script>
 </head>
-<body class="dark-theme">
-  <header class="header">
-    <h1>📅 Расписание тренировок</h1>
-    <nav>
-      <a href="index_erz.html">🏠 Главное меню</a>
-    </nav>
-  </header>
+<body class="dark-bg white-text">
+  <header class="main-header">
+  <div class="container header-container">
+    <a href="log.html" class="login-btn">Войти</a>
 
-  <section class="schedule-section">
+    <div class="logo">
+      <i class='bx bx-dumbbell'></i>
+      <p>GYMFY</p>
+    </div>
+
+    <nav class="main-nav">
+      <a href="index_erz.html">Главная</a>
+      <a href="club.html">О клубе</a>
+      <a href="trainers.html">Тренеры</a>
+      <a href="shedule.html">Расписание</a>
+      <a href="abonements.html">Абонементы</a>
+      <a href="faq.html">FAQ</a>
+      <a href="games.html">Игры</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+<p class="main"style="padding-top: 10px; padding-bottom: 10px; padding-left: 10px;"><a style="text-decoration: none"class="main1"href="index.html">Главная</a> > <a style="text-decoration: none"class="main2"href="index_menu.html">Расписание</a></p>
+
+
+  <main class="container">
+    <h1 class="title">📅 Расписание тренировок</h1>
+
+    <!-- Фильтр -->
+    <div class="filter-section">
+      <label for="filterSelect">Фильтр по типу:</label>
+      <select id="filterSelect" onchange="filterSchedule()">
+        <option value="all">Все</option>
+        <option value="cardio">Кардио</option>
+        <option value="strength">Силовые</option>
+        <option value="yoga">Йога</option>
+      </select>
+    </div>
+
+    <!-- Сетка расписания -->
     <div class="schedule-grid">
-      <div class="day-column">
+      <div class="day-block">
         <h2>Понедельник</h2>
         <ul>
-          <li>09:00 – Силовая тренировка</li>
-          <li>18:00 – Функциональный тренинг</li>
+          <li data-type="cardio">08:00 — Кардио </li>
+          <li data-type="strength">18:00 — Силовая </li>
         </ul>
       </div>
-      <div class="day-column">
+      <div class="day-block">
         <h2>Вторник</h2>
         <ul>
-          <li>10:00 – Йога</li>
-          <li>19:00 – Бокс</li>
+          <li data-type="yoga">09:00 — Йога</li>
+          <li data-type="cardio">19:00 — Беговая сессия</li>
         </ul>
       </div>
-      <div class="day-column">
+      <div class="day-block">
         <h2>Среда</h2>
         <ul>
-          <li>11:00 – Кардиотренировка</li>
-          <li>17:00 – Кроссфит</li>
+          <li data-type="strength">10:00 — Пресс и руки</li>
+          <li data-type="yoga">20:00 — Медитация</li>
         </ul>
       </div>
-      <div class="day-column">
+      <div class="day-block">
         <h2>Четверг</h2>
         <ul>
-          <li>09:00 – Пилатес</li>
-          <li>18:30 – Танцевальный фитнес</li>
+          <li data-type="cardio">08:30 — Интервальный бег</li>
+          <li data-type="strength">17:00 — Кроссфит</li>
         </ul>
       </div>
-      <div class="day-column">
+      <div class="day-block">
         <h2>Пятница</h2>
         <ul>
-          <li>08:30 – Растяжка</li>
-          <li>17:00 – Бодибилдинг</li>
+          <li data-type="yoga">09:30 — Растяжка</li>
+          <li data-type="strength">18:00 — Тяжёлая атлетика</li>
         </ul>
       </div>
-      <div class="day-column">
+      <div class="day-block">
         <h2>Суббота</h2>
         <ul>
-          <li>14:00 – Индивидуальное плавание</li>
+          <li data-type="cardio">11:00 — Велотренажёр</li>
+          <li data-type="yoga">15:00 — Спокойная йога</li>
+        </ul>
+      </div>
+      <div class="day-block">
+        <h2>Воскресенье</h2>
+        <ul>
+          <li data-type="strength">10:00 — Работа над телом</li>
         </ul>
       </div>
     </div>
-  </section>
 
-  <footer class="footer">
-    <p>© 2025 GYMFY. Все права защищены.</p>
-  </footer>
+    
+  </main>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Навигация</h4>
+      <p><a href="index_menu.html">Главная</a></p>
+      <p><a href="index_trainers.html">Тренеры</a></p>
+      <p><a href="index_membership.html">Абонементы</a></p>
+      <p><a href="index_schedule.html">Расписание</a></p>
+      <p><a href="#" onclick="requireLogin(); showScreen('booking')">Записаться</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>GYMFY</h4>
+      <p><a href="#">О клубе</a></p>
+      <p><a href="#">Миссия и цели</a></p>
+      <p><a href="#">Отзывы клиентов</a></p>
+      <p><a href="#">Наши залы</a></p>
+    </div>
+
+    <div class="footer-column">
+      <h4>Контакты</h4>
+      <p>Email: <a href="mailto:gymfy.club@gmail.com">gymfy.club@gmail.com</a></p>
+      <p>Тел: <a href="tel:+77081234567">+7 708 123 4567</a></p>
+      <p>Адрес: г. Алматы, пр. Абая 77</p>
+    </div>
+
+    <div class="footer-column logo-social">
+      <i class='bx bx-dumbbell'></i>
+      <p>© 2025 GYMFY – Твоя сила. Твой путь.</p>
+      <div class="social-icons">
+        <a href="#"><i class='bx bxl-instagram'></i></a>
+        <a href="#"><i class='bx bxl-youtube'></i></a>
+        <a href="#"><i class='bx bxl-facebook'></i></a>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="footer-bottom">
+    <p><a href="#">Политика конфиденциальности</a> | <a href="#">Пользовательское соглашение</a></p>
+  </div>
+</footer>
 </body>
 </html>
